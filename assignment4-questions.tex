@@ -1,7 +1,7 @@
 \documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
 
 \newcommand{\assignment}{4}
-\newcommand{\duedate}{February 1, 2023}
+\newcommand{\duedate}{March 1, 2023}
 \input{hw-template.tex}
 \author{
     \textbf{YOUR NAME} \\ 
@@ -72,9 +72,9 @@ where \textbf{x} and \textbf{y} are two instances of dimensionality 2, and $d(\t
 \end{equation}
 \\
 
-\textbf{[20 pts] Question 2a.)} Using the same data as \textbf{Question 1} and the same initialization instances $\{\textbf{x}_1, \textbf{x}_2, \textbf{x}_3, \textbf{x}_4, \textbf{x}_5 \}$ implement a specialized $k$-means with the above Mahalanobis Distance. Scatter the results with the different clusters as different colors. \\
+\textbf{[15 pts] Question 2a.)} Using the same data as \textbf{Question 1} and the same initialization instances $\{\textbf{x}_1, \textbf{x}_2, \textbf{x}_3, \textbf{x}_4, \textbf{x}_5 \}$ implement a specialized $k$-means with the above Mahalanobis Distance. Scatter the results with the different clusters as different colors. \\
 
-What do you notice? You may want to pre-compute $P^{-1}$ so that you aren't calculating an inverse every single loop of the the $k$-Means algorithm. Can you explain why this result differs from the result in Question 1? \\
+What do you notice? You may want to pre-compute $P^{-1}$ so that you aren't calculating an inverse every single loop of the the $k$-Means algorithm. \\
 \\
 \textbf{[5 pts] Question 2b.)}
 Calculate and print out the principle components of the aggregate data. \\
@@ -82,15 +82,21 @@ Calculate and print out the principle components of the aggregate data. \\
 \textbf{[5 pts] Question 2c.)}
 Calculate and print out the principle components of \emph{each cluster}. Are they the same as the aggregate data? Are they the same as each other?\\
 
-\textbf{[Extra 5 pts] Question 2x.)}
-Take the eigenvector / eigenvalue decomposition of $P^T$ and subsequently, take their product. 
+\textbf{[5 pts] Question 2d.)}
+Take the eigenvector / eigenvalue decomposition of $P^T$ and subsequently, take their product. That is to say, 
 
 \begin{equation}
     \{\Lambda, \Phi\} = \verb"eig"\left( P^T \right)
     \nonumber
 \end{equation}
 
-And take $P' = \Lambda \Phi$. What is the relationship between $P'$ and the data? 
+where $\Lambda = \left( \begin{matrix} \lambda_1 & 0 \\ 0 & \lambda_2 \end{matrix} \right)$ and $\Phi$ is a $2 \times 2$ matrix with $\phi_i \in \mathbb{R}^2$, a column in $\Phi$. Calculate a new $P'$ such that
+
+\begin{equation}
+    P' = \Lambda \Phi \nonumber
+\end{equation}
+\\
+What is the relationship between $P'$ and the data? 
 
 \vspace{10mm}
 
@@ -109,11 +115,14 @@ Assume that there are only five items in the data set. \\
 \\
 \textbf{[10 pts] Question 3a.)} List all candidate 4-itemsets obtained by a candidate generation procedure using the $F_{k - 1} \times F_1$ merging strategy. \\
 \\
-\\textbf{[10 pts] Question 3b.)} List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
+
+\textbf{[10 pts] Question 3b.)} List all candidate 4-itemsets obtained by the candidate generation procedure in A Priori, using $F_{k-1} \times F_{k-1}$. \\
 \\
-\\textbf{[5 pts] Question 3c.)} List all candidate 4-itemsets that survive the candidate pruning step of
+
+\textbf{[5 pts] Question 3c.)} List all candidate 4-itemsets that survive the candidate pruning step of
 the Apriori algorithm. \\
-\\vspace{10mm}
+
+\vspace{10mm}
 
 {\Large \textbf{Question 4} [25 pts total]} \\
  
